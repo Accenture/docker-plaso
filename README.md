@@ -8,17 +8,17 @@ The following `make` targets are availible. See Makefile for variable declaratio
 |------|------|
 |**build**|build the docker image|
 |**build-nocache**|build the docker image without use of docker build caching|
+|**log2timeline**|run log2timeline against $EVIDENCE_FILE|
+|**pinfo**|run pinfo against WinXP2.plaso|
+|**psort-analysis**|run psort with analysis plugins against $EVIDENCE_FILE.plaso|
+|**psort-csv**|run psort against $EVIDENCE_FILE.plaso - csv output|
+|**psort**|run psort against $EVIDENCE_FILE.plaso - json output|
 |**cdqr**|run cdqr with "do all the things" plugin set against $EVIDENCE_FILE|
 |**cdqr-lin**|run cdqr with Linux specific plugin set against $EVIDENCE_FILE|
 |**cdqr-mac**|run cdqr with Mac specific plugin set against $EVIDENCE_FILE|
 |**cdqr-win**|run cdqr with Windows specific plugin set against $EVIDENCE_FILE|
 |**git-push**|push this repo|
 |**hub-build**|schedule bulid on docker hub|
-|**log2timeline**|run log2timeline against $EVIDENCE_FILE|
-|**pinfo**|run pinfo against WinXP2.plaso|
-|**psort-analysis**|run psort with analysis plugins against $EVIDENCE_FILE.plaso|
-|**psort-csv**|run pinfo against $EVIDENCE_FILE.plaso|
-|**psort**|run pinfo against $EVIDENCE_FILE.plaso|
 |**push**|push image to docker hub|
 |**shell**|run a shell in the docker container as an unpriviledged user (usefulfor debugging)|
 |**shell-root**|run a shell in the docker container as root (useful for debugging)|
