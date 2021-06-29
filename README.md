@@ -13,10 +13,6 @@ The following `make` targets are availible. See Makefile for variable declaratio
 |**psort-analysis**|run psort with analysis plugins against $EVIDENCE_FILE.plaso|
 |**psort-csv**|run psort against $EVIDENCE_FILE.plaso - csv output|
 |**psort**|run psort against $EVIDENCE_FILE.plaso - json output|
-|**cdqr**|run cdqr with "do all the things" plugin set against $EVIDENCE_FILE|
-|**cdqr-lin**|run cdqr with Linux specific plugin set against $EVIDENCE_FILE|
-|**cdqr-mac**|run cdqr with Mac specific plugin set against $EVIDENCE_FILE|
-|**cdqr-win**|run cdqr with Windows specific plugin set against $EVIDENCE_FILE|
 |**git-push**|push this repo|
 |**hub-build**|schedule bulid on docker hub|
 |**push**|push image to docker hub|

@@ -55,7 +55,7 @@ rm:
 release: build
 	make push -e VERSION=${VERSION}
 
-test: cdqr psort-analysis psort psort-csv pinfo
+test: psort-analysis psort psort-csv pinfo
 
 log2timeline:
 	mkdir -p ${OUTPUTDIR}/log2timeline && \
@@ -106,38 +106,5 @@ pinfo:
 		--output_format json \
 		-w /output/log2timeline/${EVIDENCE_FILE}-pinfo.json \
 		/output/log2timeline/${EVIDENCE_FILE}.plaso
-
-cdqr:
-	mkdir -p ${OUTPUTDIR}/log2timeline && \
-	rm -f ${OUTPUTDIR}/log2timeline/${EVIDENCE_FILE}.json && \
-	docker run --rm -it ${VOLUMES} ${NS}/${IMAGE_NAME} cdqr.py \
-		--max_cpu -y \
-		-p datt \
-		--export /data/${EVIDENCE_FILE} \
-		/output/log2timeline/
-
-cdqr-lin:
-	mkdir -p ${OUTPUTDIR}/log2timeline && \
-	docker run --rm -it ${VOLUMES} ${NS}/${IMAGE_NAME} cdqr.py \
-		--max_cpu \
-		-p lin -y \
-		--export /data/${EVIDENCE_FILE} \
-		/output/log2timeline/
-
-cdqr-win:
-	mkdir -p ${OUTPUTDIR}/log2timeline && \
-	docker run --rm -it ${VOLUMES} ${NS}/${IMAGE_NAME} cdqr.py \
-		--max_cpu \
-		-p win -y \
-		--export /data/${EVIDENCE_FILE} \
-		/output/log2timeline/
-
-cdqr-mac:
-	mkdir -p ${OUTPUTDIR}/log2timeline && \
-	docker run --rm -it ${VOLUMES} ${NS}/${IMAGE_NAME} cdqr.py \
-		--max_cpu \
-		-p mac -y \
-		--export /data/${EVIDENCE_FILE} \
-		/output/log2timeline/
 
 default: build
